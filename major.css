@@ -1,0 +1,53 @@
+body {
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+.links{
+    display:flex;
+    background-color: grey;
+    width:100%;
+    height:50px;
+    justify-content: space-between;
+    align-items: center;
+  
+    font-size: larger;
+    
+    }
+    .links a{
+        text-decoration:none;
+        color: white;
+    }
+    div{
+        padding: 20px;
+    }
+     input{
+        width:600px;
+        height:50px;
+    }
+    .whatcontainer{
+        /* background-color: yellow; */
+        text-align: center;
+        margin-top: 100px;
+    }
+    .resumejob{
+        margin-top: 50px;
+        text-align: center;
+    }
+    .popular{
+        text-align: center;
+    }
+    button{
+        margin-top: 50px;
+     margin-left: 620px;
+    }
+    #jobcontainer{
+        background-color: chartreuse;
+        width:600px;
+        height:600px;
+    }
+    divForItem {
+        background-color: crimson;
+        width:300px;
+    }
