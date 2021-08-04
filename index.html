@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jobs</title>
+    <link rel="stylesheet" href="major.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="whole">
+    <div class="main">
+  
+    <button id ="postjobbutton"type="button" class="btn btn-outline-primary btn-lg">POST JOB</button>
+    <div id="postjobdatas">
+        <input id="title" type="text" class="form-control"  placeholder="title">
+        <div class="form-floating" >
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Description</label>
+            <div class="comlo">
+                <input id="company" type="text" class="form-control"  placeholder="company">
+                <input id="Location" type="text" class="form-control"  placeholder="Location">
+            </div>
+            <div class="salary">
+                <input id="fromsal" type="text" class="form-control"  placeholder="from$">
+                <input id="tosal" type="text" class="form-control"  placeholder="to$">
+            </div>
+            <div class="type-and-workfrom">
+                <select class="form-select" id="emtype" aria-label="Default select example">
+                   
+                    <option value="1">Full Time</option>
+                    <option value="2">Part Time</option>
+                   
+                  </select>
+                  
+                  <select class="form-select" id="workfrom" aria-label="Default select example">
+                   
+                    <option value="1">Work From Home</option>
+                    <option value="2">Work From Remote</option>
+                   
+                  </select>
+          </div>
+          <button id ="createjobbutton"type="button" class="btn btn-primary btn-lg">create job</button>
+        </div>
+    </div>
+    <button id ="login"type="button" class="btn btn-primary btn-lg">LOG IN</button>
+         
+    <div class="whatcontainer">
+        
+     
+      
+        <div class="col-auto"  >
+          
+            <input id="city" type="text" class="form-control"  placeholder="Location">
+           
+          </div>
+          <button id ="findjob"type="button" class="btn btn-primary btn-lg">FIND JOB</button>
+
+</div>
+ <div id="jobcontainer">
+     
+<h2><span>F</span>ind Your <span>Dr</span>eam Job</h2>
+ </div>
+
+
+ </div>
+ <script src="major.js"></script>
+</body>
+</html>

@@ -2,7 +2,7 @@ const JOBS = [
     {
         id: 'j1',
         title: "Software Engineer",
-        description: 'Craft robust, beautiful, usable interfaces for our products and our client’s projects. Play an integral role in connecting and collaborating with strategy, design, and backend to create a cohesive and organized final experience. And enthusiastically own getting to the most optimal solution.',
+        description: "Craft robust, beautiful, usable interfaces for our products and our client's projects. Play an integral role in connecting and collaborating with strategy, design, and backend to create a cohesive and organized final experience. And enthusiastically own getting to the most optimal solution.",
         company: "Dream inc.",
         salaryRange: {
             from: 2000,
@@ -11,7 +11,7 @@ const JOBS = [
         location: "Hyderabad",
         employmentType: "full-time", // full-time, part-time
         workingFrom: "remote", // office, remote
-        createdDate: Date.now().toString(),
+        createdDate: new Date().toUTCString(),
     },
     {
         id: 'j2',
@@ -22,41 +22,53 @@ const JOBS = [
             from:2000,
             to :3000,
         },
-        location:"kerala",
+        location:"Kerala",
         employmentType:"full-time",
         workingFrom:"remote",
-        createdDate: Date.now().toString(),
+        createdDate:new Date().toUTCString(),
     },
 ]
 
-const findJob = document.getElementById("findjob")
-const title = document.getElementById("title")
-const city = document.getElementById("city")
-let i = 0;
-const container = document.getElementById('jobcontainer');
 
-
-findJob.addEventListener("click", () =>{
-    container.innerHTML = ""
-   
-    if (title.value.toLowerCase() === JOBS[i].title.toLowerCase()&&city.value.toLowerCase()===JOBS[i].location.toLowerCase() ){
-       
+const renderOneJob = (job) => {
         const divForItem = document.createElement("div");
-        divForItem.innerHTML = `<h3>${JOBS[i].title}</h3>
-        <p>${JOBS[i].description}</p>
-        <p>${JOBS[i].salaryRange.from}$ - ${JOBS[i].salaryRange.to}$</p>
-        <p>${JOBS[i].createdDate}</p> `
+        divForItem.style.backgroundColor="#0275d8"
+        divForItem.style.width="300px"
+        divForItem.style.height="100%"
+        divForItem.style.marginRight="10px"
+        divForItem.style.borderRadius="30px"
+        divForItem.style.padding="10px"
+        divForItem.innerHTML = `<h3>${job.title}</h3>
+        <p>${job.description}</p>
+        <p>${job.salaryRange.from}$ - ${job.salaryRange.to}$</p>
+        <p>${job.createdDate}</p> `
+        const container = document.getElementById('jobcontainer');
         container.appendChild(divForItem)
-
-        title.value = ""
-        city.value = ""
+}
+const renderJobs = (matchedJobs) => {
+    // Remove previously rendered job items, so that we can rerender the whole array again
+    const container = document.getElementById('jobcontainer');
+    container.innerHTML = ''
+    let i = 0;
+    while (i < matchedJobs.length) {
+        renderOneJob(matchedJobs[i])
+        i++;
     }
-
-    else{i++}
-
-   
+}
+const findJob = document.getElementById("findjob")
+findJob.addEventListener("click", () => {
+    const cityInput = document.getElementById("city")
+    let matchedJobs = [];
+    let i = 0;
+    while (i < JOBS.length) {
+        if (JOBS[i].location.substring(0, cityInput.value.length).toLowerCase()=== cityInput.value.toLowerCase()) {
+            matchedJobs.push(JOBS[i])
+        }
+        i++;
+    }
+    renderJobs(matchedJobs);
+    cityInput.value = ''
 })
-
  const createJob = (title, description, company, salaryFrom, salaryTo, location, employmentType, workingFrom) => {
     JOBS.push({
          id: `j${JOBS.length + 1}`,
@@ -70,61 +82,28 @@ findJob.addEventListener("click", () =>{
          location: location,
          employmentType: employmentType,
         workingFrom:workingFrom,
-        createdDate: Date.now().toString(),
+        createdDate: new Date().toUTCString(),
    })
  }
-// console.log (JOBS)
-
-//  const renderOneJob = (job) => {
-//     const newJobElement = document.createElement('div');
-//     newJobElement.classList.add('job-item');
-//      newJobElement.innerHTML = `
-//         <h3>${job.title}</h3>
-//          <p>${job.description}</p>
-//          <p>${job.salaryRange.from}$ - ${job.salaryRange.to}$</p>
-//          <p>${job.createdDate}</p>
-//      `
-
-    // const container = document.getElementById('jobcontainer');
-    // container.appendChild(newJobElement);
- 
-// const renderJobs = () => {
-
-//     // Remove previously rendered job items, so that we can rerender the whole array again
-//     const container = document.getElementById('jobs-container');
-//     container.innerHTML = ''
-
-//     let i = 0;
-
-//     while (i < JOBS.length) {
-//         renderOneJob(JOBS[i])
-//         i++;
-//     }
-// }
-
-
-
-// //  renderJobs();
-
-const postJobButton = document.getElementById("postjobbutton");
-
+ // TODO: Create a modal
+ const postJobButton = document.getElementById("postjobbutton");
 postJobButton.addEventListener('click', () => {
-     // Collect this data from user inputs
-       
-    const newtitle = document.getElementById("inputtitle").value
-
-   const description = document.getElementById("inputDescription").value
-     const company = document.getElementById("inputcompany").value
-    const salaryFrom = document.getElementById("inputsalaryf").value
-     const salaryTo = document.getElementById("inputsalaryto").value
-    const location = document.getElementById("inputlocation").value
-     const employmentType = document.getElementById("inputemploymenttype").value
-    const workingFrom = document.getElementById("inputworkingfrom").value
-
-   createJob(newtitle, description, company, salaryFrom, salaryTo, location, employmentType, workingFrom )
-    
+    postjobdatas = document.getElementById('postjobdatas')
+    postjobdatas.style.display="block"})
+    const createbutton = document.getElementById("createjobbutton")
+createbutton .addEventListener('click', () => {
+    postjobdatas.style.display="none"
+   const newtitle = document.getElementById("title").value
+  const description = document.getElementById("floatingTextarea2").value
  
-     console.log('JOBS =', JOBS)
+  const company = document.getElementById("company").value
+const salaryFrom = document.getElementById("fromsal").value
+ const salaryTo = document.getElementById("tosal").value
+ const location = document.getElementById("Location").value
+  const employmentType = document.getElementById("emtype").value
+  const workingFrom = document.getElementById("workfrom").value
+ createJob(newtitle, description, company, salaryFrom, salaryTo, location, employmentType, workingFrom )
+ 
+    
+    console.log('JOBS =', JOBS)
  })
-
-  

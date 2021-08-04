@@ -1,53 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Poppins',sans-serif;
+}
 body {
-    margin:0px;
-    padding:0px;
-    box-sizing: border-box;
+ 
+    background-color:#333;
+ 
+  
+}
+.main{
+ margin-top: 50px; 
 }
 
-.links{
-    display:flex;
-    background-color: grey;
-    width:100%;
-    height:50px;
-    justify-content: space-between;
-    align-items: center;
-  
-    font-size: larger;
-    
+#location{
+    width:400px;
+    margin-left: 50px;
     }
-    .links a{
-        text-decoration:none;
-        color: white;
-    }
-    div{
-        padding: 20px;
-    }
+   
      input{
         width:600px;
         height:50px;
     }
     .whatcontainer{
-        /* background-color: yellow; */
-        text-align: center;
-        margin-top: 100px;
-    }
-    .resumejob{
-        margin-top: 50px;
-        text-align: center;
-    }
-    .popular{
-        text-align: center;
-    }
-    button{
-        margin-top: 50px;
-     margin-left: 620px;
-    }
-    #jobcontainer{
-        background-color: chartreuse;
+     
         width:600px;
         height:600px;
+        
+        padding:200px;
+
+        text-align:center;
+          margin-left: 100px;
+}
+    
+ #findjob{
+     margin-top: 20px;
+ }
+    
+    #jobcontainer{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+       
+      position: absolute;
+     top: calc(50vh - 300px);
+     left: calc(50vw - 100px);
+        width:max-content;
+        height:600px;
+       
+        padding:30px;
+        color:white;
+        border-radius: 30px;
+        box-shadow: 5px 10px green;
+        background-color: #333;
     }
-    divForItem {
-        background-color: crimson;
-        width:300px;
-    }
+   
+ 
+   #postjob{
+       margin-left: 50px;
+       margin-top: 20px;
+   }
+   .divforitem{
+       width:600px;
+       height:600px;
+   }
+
+   
+   #postjobdatas{
+       width:500px;
+       height:500px;
+       background-color: crimson;
+       position:absolute;
+        top: calc(50vh - 250px);
+       left: calc(50vw - 250px);
+       padding:20px;
+       text-align: center;
+       display:none;
+       z-index: 2;
+
+   }
+   .comlo{
+       display: flex; 
+       margin-bottom: 15px;
+      
+       margin-top: 15px;
+   }
+   .salary{
+       display: flex;
+       margin-bottom: 15px;
+   }
+   .type-and-workfrom{
+    margin-bottom: 15px;
+   }
+   .description{
+    margin-bottom: 15px;
+   }
+   #title{
+    margin-bottom: 15px;  
+   }
+   #company{
+    margin-right: 10px;
+   }
+   #fromsal{
+    margin-right: 10px;
+   }
+   .whole{
+       display: flex;
+      background-color:#333;
+   }
+   h2{
+       position: relative;
+       margin:0;
+       font-size: 6em;
+       font-weight: 900;
+       color:#fff;
+       z-index: 1;
+       overflow: hidden;
+   }
+   h2 span{
+       color:#ff022c;
+   }
+   h2:before{
+       content:'';
+       position: absolute;
+       left:110%;
+       width:120%;
+       height:120%;
+       background: linear-gradient(90deg,transparent 0%,#333 5%,#333 100%);
+       animation:animate 6.5s linear forwards infinite;
+   }
+   @keyframes animate {
+       0%{left:110%;}
+       100%{left:-20%;}
+   }
+  .form-select{
+      margin-bottom: 15px;
+  }
+  
