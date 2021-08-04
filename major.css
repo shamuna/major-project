@@ -5,10 +5,8 @@
     font-family: 'Poppins',sans-serif;
 }
 body {
- 
+
     background-color:#333;
- 
-  
 }
 .main{
  margin-top: 50px; 
@@ -40,15 +38,10 @@ body {
     
     #jobcontainer{
         display:flex;
-        justify-content: center;
-        align-items: center;
-       
-      position: absolute;
-     top: calc(50vh - 300px);
-     left: calc(50vw - 100px);
-        width:max-content;
-        height:600px;
-       
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
         padding:30px;
         color:white;
         border-radius: 30px;

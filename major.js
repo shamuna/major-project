@@ -2,7 +2,7 @@ const JOBS = [
     {
         id: 'j1',
         title: "Software Engineer",
-        description: "Craft robust, beautiful, usable interfaces for our products and our client's projects. Play an integral role in connecting and collaborating with strategy, design, and backend to create a cohesive and organized final experience. And enthusiastically own getting to the most optimal solution.",
+        description: "Craft robust, beautiful, usable interfaces for our products and our client's projects. ",
         company: "Dream inc.",
         salaryRange: {
             from: 2000,
@@ -34,7 +34,7 @@ const renderOneJob = (job) => {
         const divForItem = document.createElement("div");
         divForItem.style.backgroundColor="#0275d8"
         divForItem.style.width="300px"
-        divForItem.style.height="100%"
+        divForItem.style.height="350px"
         divForItem.style.marginRight="10px"
         divForItem.style.borderRadius="30px"
         divForItem.style.padding="10px"
@@ -66,6 +66,7 @@ findJob.addEventListener("click", () => {
         }
         i++;
     }
+
     renderJobs(matchedJobs);
     cityInput.value = ''
 })
