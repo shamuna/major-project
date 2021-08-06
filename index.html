@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="major.css">
 </head>
 <body>
+    <div class="postlog">
     <button id ="postjobbutton"type="button" class="btn btn-outline-primary btn-lg">POST JOB</button>
     <div id="postjobdatas">
         <input id="title" type="text" class="form-control"  placeholder="title">
@@ -38,11 +39,27 @@
                    
                   </select>
           </div>
-          <button id ="createjobbutton"type="button" class="btn btn-primary btn-lg">create job</button>
+          <button type="button"id="createjobbutton" class="btn btn-secondary btn-sm">Create Job</button>
         </div>
     </div>
 
-    <button id ="login"type="button" class="btn btn-primary btn-lg">LOG IN</button>
+    <button id ="open-login-window"type="button" class="btn btn-outline-primary btn-lg">LOG IN</button>
+    <div id="login-window">
+        <div>
+            <div class="mb-3">
+              <label for="login-name-input" class="form-label">Name</label>
+              <input class="form-control" id="login-name-input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="password-input" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password-input">
+            </div>
+            <button id="login-submit" class="btn btn-primary">Submit</button>
+            <button id="login-cancel" class="btn">Cancel</button>
+        </div>
+    </div>
+    <img src="OIP.jpg">
+</div>
     <div class="whatcontainer">
         <div class="col-auto"  >
             <input id="city" type="text" class="form-control"  placeholder="Location">

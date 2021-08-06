@@ -28,6 +28,29 @@ const JOBS = [
         createdDate:new Date().toUTCString(),
     },
 ]
+const USERS = [
+    {
+        name: 'Samuel',
+        password: 'hello1'
+    },
+    {
+        name: 'Jackson',
+        password: 'hello2'
+    },
+    {
+        name: 'Shamuna',
+        password: 'hello3'
+    },
+    {
+        name: 'Alex', 
+       password: 'hello4'
+    },
+    {
+        name: 'Maria',
+       password: 'hello5'
+    },
+]
+
 
 
 const renderOneJob = (job) => {
@@ -37,6 +60,7 @@ const renderOneJob = (job) => {
         divForItem.style.height="350px"
         divForItem.style.marginRight="10px"
         divForItem.style.borderRadius="30px"
+        divForItem.style.marginTop="10px"
         divForItem.style.padding="10px"
         divForItem.innerHTML = `<h3>${job.title}</h3>
         <p>${job.description}</p>
@@ -108,3 +132,52 @@ const salaryFrom = document.getElementById("fromsal").value
     
     console.log('JOBS =', JOBS)
  })
+ //login
+ const openLoginWindow = document.getElementById('open-login-window');
+const headerName = document.createElement("h1")
+
+headerName.innerHTML = ""
+openLoginWindow.addEventListener('click', () => {
+   
+    const loginWindow = document.getElementById('login-window');
+    loginWindow.style.display = 'block';
+
+    const loginSubmit = document.getElementById('login-submit');
+    const loginCancel = document.getElementById('login-cancel');
+   
+    loginSubmit.addEventListener('click', () => {
+       
+        // Collect the user data from inputs, compare with all Users and login if there's a match
+        const loginName = document.getElementById('login-name-input').value
+
+        // Find a user with the name we've entered to the login input
+        const foundUserobject = USERS.find(currentUser => currentUser.name.toLowerCase() === loginName.toLowerCase())
+        
+         const loginPassword = document.getElementById('password-input').value .toLowerCase()
+
+         // Check if the entered password matches the password in found
+         if  (loginPassword === foundUserobject.password){ 
+            loggedInUser = foundUserobject  ;
+            
+
+            // Store a found user object to the browser memory. Translate an object to a string,
+            // cause localStorage only saves strings
+          
+
+           
+            headerName.innerHTML = loggedInUser.name
+            document.body.prepend(headerName)
+            
+           
+           
+           
+            loginWindow.style.display = 'none';
+
+
+         }
+        })
+
+        loginCancel.addEventListener('click', () => {
+            loginWindow.style.display = 'none';
+    })
+})
